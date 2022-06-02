@@ -17,7 +17,6 @@ class autoSurvey():
             else:
                 flist=file.readlines()
                 for i in flist:
-                    print("for loop")
                     tlist = i.split()
                     self.user_data[tlist[0]] = tlist[1:]
                 break
