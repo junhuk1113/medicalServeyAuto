@@ -12,11 +12,9 @@ class autoSurvey():
     def __init__(self):
         self.user_data = {}
         while True:
-            print("while..")
             try:
                 file = open('userData.dat','r',encoding='UTF-8')
             except FileNotFoundError:#userData.dat 파일이 없으면 새로 생성
-                print("except")
                 file = open('userData.dat','w',encoding='UTF-8')
                 file.close()
             else:
@@ -33,7 +31,6 @@ class autoSurvey():
     # 페이지가 완전히 로딩되도록 3초동안 기다림
     #time.sleep(1)
     def runAuto(self,name, address, temperature):
-        print("runAuto method run")
         driver = webdriver.Chrome(path) 
         driver.get('https://form.office.naver.com/form/responseView.cmd?formkey=YzVhMWI5OTYtMmNhMC00YmI3LWFmMmYtNzQ3MjJlMzcyNjc2&sourceId=urlshare')
         time.sleep(1)
@@ -53,7 +50,6 @@ class autoSurvey():
     def createNewuser(self, name, address, temperature):
         self.user_data[name] = [address, temperature]
     def surveyAll(self):
-        print("surveyAll method run")
         for key in self.user_data.keys():
             self.runAuto(key,self.user_data[key][0],self.user_data[key][1])
 
