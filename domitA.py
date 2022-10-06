@@ -56,7 +56,7 @@ class autoSurvey():
 
 Gugwon = autoSurvey()
 #Gugwon.surveyAll()
-schedule.every().day.at("01:48:00").do(Gugwon.surveyAll()) 
+schedule.every().day.at("01:49:00").do(Gugwon.surveyAll) 
 while True:
     schedule.run_pending()
     time.sleep(1)
