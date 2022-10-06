@@ -32,7 +32,7 @@ class autoSurvey():
     def runAuto(self,name, address, temperature):
         driver = webdriver.Chrome(path,chrome_options=chrome_options) # 크롬드라이버 실행
         #크롬 드라이버에 url 주소 넣고 실행
-        driver.get(testurl)
+        driver.get(url)
         time.sleep(1) #웹페이지 로딩 대기
         search_box = driver.find_element_by_xpath('//*[@id="answer"]')
         search_box.send_keys(address)
@@ -50,14 +50,13 @@ class autoSurvey():
     def createNewuser(self, name, address, temperature):
         self.user_data[name] = [address, temperature]
     def surveyAll(self):
-        print("ttt")
         for key in self.user_data.keys():
             print(key)
             self.runAuto(key,self.user_data[key][0],self.user_data[key][1])
 
 Gugwon = autoSurvey()
 #Gugwon.surveyAll()
-schedule.every().day.at("02:18").do(Gugwon.surveyAll) 
+schedule.every().day.at("08:30").do(Gugwon.surveyAll) 
 while True:
     schedule.run_pending()
     time.sleep(1)
