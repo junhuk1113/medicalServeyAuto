@@ -52,12 +52,11 @@ class autoSurvey():
     def surveyAll(self):
         for key in self.user_data.keys():
             print(key)
-            print("asdf")
             self.runAuto(key,self.user_data[key][0],self.user_data[key][1])
 
 Gugwon = autoSurvey()
-Gugwon.surveyAll()
-#schedule.every().day.at("01:39:00").do(Gugwon.surveyAll) 
-#while True:
-#    schedule.run_pending()
-#    time.sleep(1)
+#Gugwon.surveyAll()
+schedule.every().day.at("01:48:00").do(Gugwon.surveyAll()) 
+while True:
+    schedule.run_pending()
+    time.sleep(1)
