@@ -1,9 +1,13 @@
 from selenium import webdriver
 import os
 path = os.path.join(os.path.dirname(__file__), 'chromedriver.exe')
+
 # selenium으로 무엇인가 입력하기 위한 import
 from selenium.webdriver.common.keys import Keys
 import time
+import schedule
+testurl = "https://naver.me/xBhETdUD"
+url = "https://naver.me/xNoaOYLe"
 
 class autoSurvey():
     def __init__(self):
@@ -20,11 +24,11 @@ class autoSurvey():
                     tlist = i.split()
                     self.user_data[tlist[0]] = tlist[1:]
                 break
-                
+                c
     def runAuto(self,name, address, temperature):
         driver = webdriver.Chrome(path) # 크롬드라이버 실행
         #크롬 드라이버에 url 주소 넣고 실행
-        driver.get('https://form.office.naver.com/form/responseView.cmd?formkey=YzVhMWI5OTYtMmNhMC00YmI3LWFmMmYtNzQ3MjJlMzcyNjc2&sourceId=urlshare')
+        driver.get(testurl)
         time.sleep(1) #웹페이지 로딩 대기
         search_box = driver.find_element_by_xpath('//*[@id="answer"]')
         search_box.send_keys(address)
@@ -43,7 +47,11 @@ class autoSurvey():
         self.user_data[name] = [address, temperature]
     def surveyAll(self):
         for key in self.user_data.keys():
+            print(key)
             self.runAuto(key,self.user_data[key][0],self.user_data[key][1])
 
 Gugwon = autoSurvey()
-Gugwon.surveyAll()
+schedule.every().day.at("01:22:20").do(Gugwon.surveyAll) 
+while True:
+    schedule.run_pending()
+    time.sleep(1)
