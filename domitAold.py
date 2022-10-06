@@ -32,5 +32,5 @@ search_box = driver.find_element_by_xpath('//*[@id="formItem_5"]/div/div[3]/div/
 search_box.send_keys(Keys.ENTER) 
 search_box = driver.find_element_by_xpath('//*[@id="pageNav"]/button[3]')
 search_box.send_keys(Keys.ENTER) 
-time.sleep(2)
+
 driver.quit() 
