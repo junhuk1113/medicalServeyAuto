@@ -50,6 +50,7 @@ class autoSurvey():
     def createNewuser(self, name, address, temperature):
         self.user_data[name] = [address, temperature]
     def surveyAll(self):
+        print("ttt")
         for key in self.user_data.keys():
             print(key)
             self.runAuto(key,self.user_data[key][0],self.user_data[key][1])
