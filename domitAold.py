@@ -13,7 +13,7 @@ import time
 driver = webdriver.Chrome(path) 
 
 #크롬 드라이버에 url 주소 넣고 실행
-driver.get('https://form.office.naver.com/form/responseView.cmd?formkey=YzVhMWI5OTYtMmNhMC00YmI3LWFmMmYtNzQ3MjJlMzcyNjc2&sourceId=urlshare')
+driver.get('https://naver.me/xBhETdUD')
 
 # 페이지가 완전히 로딩되도록 3초동안 기다림
 #time.sleep(1)
