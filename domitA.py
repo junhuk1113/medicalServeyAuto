@@ -1,6 +1,6 @@
 from selenium import webdriver
 import os
-path = os.path.join(os.path.dirname(__file__), 'chromedriver.exe')
+path = os.path.join(os.path.dirname(__file__), '/home/opc/chromedriver')
 
 # selenium으로 무엇인가 입력하기 위한 import
 from selenium.webdriver.common.keys import Keys
@@ -51,7 +51,7 @@ class autoSurvey():
             self.runAuto(key,self.user_data[key][0],self.user_data[key][1])
 
 Gugwon = autoSurvey()
-schedule.every().day.at("01:22:20").do(Gugwon.surveyAll) 
+schedule.every().day.at("01:31:00").do(Gugwon.surveyAll) 
 while True:
     schedule.run_pending()
     time.sleep(1)
