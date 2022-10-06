@@ -5,7 +5,7 @@ chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument("--single-process")
 chrome_options.add_argument("--disable-dev-shm-usage")
-path = os.path.join(os.path.dirname(__file__), '/home/opc/chromedriver',chrome_options=chrome_options)
+path = os.path.join(os.path.dirname(__file__), '/home/opc/chromedriver')
 
 # selenium으로 무엇인가 입력하기 위한 import
 from selenium.webdriver.common.keys import Keys
@@ -14,7 +14,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 # 크롬드라이버 실행  (경로 예: '/Users/Roy/Downloads/chromedriver')
-driver = webdriver.Chrome(path) 
+driver = webdriver.Chrome(path,chrome_options=chrome_options) 
 
 #크롬 드라이버에 url 주소 넣고 실행
 driver.get('https://naver.me/xBhETdUD')
