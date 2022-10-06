@@ -30,7 +30,7 @@ class autoSurvey():
                 break
                 c
     def runAuto(self,name, address, temperature):
-        driver = webdriver.Chrome(path) # 크롬드라이버 실행
+        driver = webdriver.Chrome(path,chrome_options=chrome_options) # 크롬드라이버 실행
         #크롬 드라이버에 url 주소 넣고 실행
         driver.get(testurl)
         time.sleep(1) #웹페이지 로딩 대기
