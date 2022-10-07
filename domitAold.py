@@ -22,7 +22,7 @@ driver.get('https://naver.me/xBhETdUD')
 # 페이지가 완전히 로딩되도록 3초동안 기다림
 #time.sleep(1)
 search_box = driver.find_element_by_xpath('//*[@id="answer"]')
-search_box.send_keys('325')
+search_box.send_keys('237')
 search_box = driver.find_element_by_xpath('/html/body/div[5]/div[1]/div[1]/div[1]/div[2]/div/div/div[2]/form/div/div[2]/div/div[3]/div/input')
 search_box.send_keys('권준혁') 
 search_box = driver.find_element_by_xpath("/html/body/div[5]/div[1]/div[1]/div[1]/div[2]/div/div/div[2]/form/div/div[3]/div/div[3]/div/input")
