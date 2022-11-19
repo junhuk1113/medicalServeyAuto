@@ -1,7 +1,7 @@
 import socket
  
 host = ''
-port = 9999
+port = 8080
  
 server_sock = socket.socket(socket.AF_INET)
 server_sock.bind((host, port))
