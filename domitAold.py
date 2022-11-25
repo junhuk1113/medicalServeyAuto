@@ -5,7 +5,7 @@ chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument("--single-process")
 chrome_options.add_argument("--disable-dev-shm-usage")
-path = os.path.join(os.path.dirname(__file__), '/home/opc/chromedriver')
+path = os.path.join(os.path.dirname(__file__), '/home/junhuk1113/chromedriver')
 
 # selenium으로 무엇인가 입력하기 위한 import
 from selenium.webdriver.common.keys import Keys

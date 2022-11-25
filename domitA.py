@@ -1,6 +1,6 @@
 from selenium import webdriver
 import os
-path = os.path.join(os.path.dirname(__file__), '/home/opc/chromedriver')
+path = os.path.join(os.path.dirname(__file__), '/home/junhuk1113/chromedriver')
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox')
