@@ -8,6 +8,7 @@ chrome_options.add_argument("--single-process")
 chrome_options.add_argument("--disable-dev-shm-usage")
 # selenium으로 무엇인가 입력하기 위한 import
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 import time
 import schedule
 testurl = "https://naver.me/xBhETdUD"
@@ -34,16 +35,16 @@ class autoSurvey():
         #크롬 드라이버에 url 주소 넣고 실행
         driver.get(testurl)
         time.sleep(1) #웹페이지 로딩 대기
-        search_box = driver.find_element_by_xpath('//*[@id="answer"]')
+        search_box = driver.find_element(By.XPATH,'//*[@id="answer"]')
         search_box.send_keys(address)
-        search_box = driver.find_element_by_xpath('/html/body/div[5]/div[1]/div[1]/div[1]/div[2]/div/div/div[2]/form/div/div[2]/div/div[3]/div/input')
+        search_box = driver.find_element(By.XPATH,'/html/body/div[5]/div[1]/div[1]/div[1]/div[2]/div/div/div[2]/form/div/div[2]/div/div[3]/div/input')
         search_box.send_keys(name) 
-        search_box = driver.find_element_by_xpath("/html/body/div[5]/div[1]/div[1]/div[1]/div[2]/div/div/div[2]/form/div/div[3]/div/div[3]/div/input")
+        search_box = driver.find_element(By.XPATH,"/html/body/div[5]/div[1]/div[1]/div[1]/div[2]/div/div/div[2]/form/div/div[3]/div/div[3]/div/input")
         search_box.send_keys(temperature) 
         search_box.send_keys(Keys.PAGE_DOWN) 
-        search_box = driver.find_element_by_xpath('//*[@id="formItem_5"]/div/div[3]/div/div[2]/div')
+        search_box = driver.find_element(By.XPATH,'//*[@id="formItem_5"]/div/div[3]/div/div[2]/div')
         search_box.send_keys(Keys.ENTER) 
-        search_box = driver.find_element_by_xpath('//*[@id="pageNav"]/button[3]')
+        search_box = driver.find_element(By.XPATH,'//*[@id="pageNav"]/button[3]')
         search_box.send_keys(Keys.ENTER) 
         time.sleep(2)
         driver.quit()
